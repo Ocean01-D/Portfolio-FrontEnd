@@ -1,28 +1,47 @@
-function Hero() {
+import { motion } from "framer-motion";
+
+const Hero = () => {
   return (
-    <section className="flex flex-col items-center justify-center text-center py-20 px-4 bg-gray-50">
-      {/* Avatar */}
-      <img
-        src="https://i.pravatar.cc/150?img=3" // tạm thời đổi lại sau
-        alt="Avatar"
-        className="w-32 h-32 rounded-full border-4 border-blue-600 shadow mb-6"
-      />
+    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 gap-10">
+      {/* Ảnh đại diện */}
+      <motion.div
+        className="w-60 h-60 rounded-full overflow-hidden border-4 border-gray-500 shadow-xl"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <img
+          src="/your-image.jpg" // sửa lại sau
+          alt="avatar"
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
 
-      {/* Tên */}
-      <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-2">
-        Dai Duong Le
-      </h1>
+      {/* Nội dung bên phải */}
+      <motion.div
+        className="text-center md:text-left max-w-xl"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+      >
+        <p className="text-gray-400">Programmer | Back-end Developer</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Ocean</h1>
+        <p className="text-gray-300 mb-6">
+          Dynamic team leader experienced in project management, Node.js, and MongoDB.
+          Passionate about building practical web applications and solving real-world problems.
+        </p>
 
-      {/* Job Title */}
-      <h2 className="text-lg text-gray-600 mb-4">Programmer</h2>
-
-      {/* Giới thiệu ngắn */}
-      <p className="max-w-2xl text-gray-700 leading-relaxed">
-        Dynamic team leader with a proven track record in project management,
-        successfully guiding the development of AI and bookstore websites. Expert in Node.js and MongoDB, I excel in problem-solving and collaboration, achieving project success through effective resource allocation and risk mitigation strategies.
-      </p>
+        <div className="flex gap-4 justify-center md:justify-start">
+          <button className="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
+            Portfolio
+          </button>
+          <button className="px-6 py-2 rounded-full border border-gray-400 text-white hover:bg-gray-700 transition">
+            Contact
+          </button>
+        </div>
+      </motion.div>
     </section>
   );
-}
+};
 
 export default Hero;
