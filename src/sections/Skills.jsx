@@ -1,4 +1,3 @@
-// src/sections/Skills.jsx
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -24,7 +23,8 @@ const Skills = () => {
   return (
     <section
       ref={ref}
-      className="bg-gray-100 dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8"
+      id="skills"
+      className="bg-gray-100 dark:bg-gray-900 py-16 px-4 transition-colors duration-500"
     >
       <div className="max-w-6xl mx-auto">
         <motion.h2

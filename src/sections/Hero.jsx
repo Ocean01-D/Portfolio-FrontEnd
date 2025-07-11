@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 gap-10">
+    <section id="hero" className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 gap-10 bg-white dark:bg-gray-900 transition-colors duration-500">
       {/* Ảnh đại diện */}
       <motion.div
-        className="w-60 h-60 rounded-full overflow-hidden border-4 border-gray-500 shadow-xl"
+        className="w-48 h-48 sm:w-60 sm:h-60 rounded-full overflow-hidden border-4 border-gray-500 shadow-xl"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <img
-          src="/your-image.jpg" // sửa lại sau
+          src="/your-image.jpg" // thay sau
           alt="avatar"
           className="w-full h-full object-cover"
         />
@@ -24,9 +24,11 @@ const Hero = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, delay: 0.2 }}
       >
-        <p className="text-gray-400">Programmer | Back-end Developer</p>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">Ocean</h1>
-        <p className="text-gray-300 mb-6">
+        <p className="text-gray-600 dark:text-gray-400">Programmer | Back-end Developer</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+          Ocean
+        </h1>
+        <p className="text-gray-700 dark:text-gray-300 mb-6">
           Dynamic team leader experienced in project management, Node.js, and MongoDB.
           Passionate about building practical web applications and solving real-world problems.
         </p>
@@ -35,7 +37,7 @@ const Hero = () => {
           <button className="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
             Portfolio
           </button>
-          <button className="px-6 py-2 rounded-full border border-gray-400 text-white hover:bg-gray-700 transition">
+          <button className="px-6 py-2 rounded-full border border-gray-400 dark:border-gray-300 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
             Contact
           </button>
         </div>

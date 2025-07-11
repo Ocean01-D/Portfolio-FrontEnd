@@ -1,6 +1,7 @@
 // src/sections/Projects.jsx
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import ProjectItem from "../components/ProjectItem";
 
 const Projects = () => {
   const ref = useRef(null);
@@ -11,13 +12,15 @@ const Projects = () => {
       title: "Auto-Grading AI Website",
       description:
         "A website to grade student answers automatically using AI. Built with Flask backend, NLP for scoring, and simple frontend.",
-      technologies: ["Flask", "NLP", "Python", "HTML/CSS"],
+      tech: ["Flask", "NLP", "Python", "HTML/CSS"],
+      link: "#", // bạn có thể cập nhật link sau nếu có
     },
     {
       title: "Bookstore Website",
       description:
         "An online bookstore built using Node.js and ExpressJS. Includes book management, authentication, and MongoDB database.",
-      technologies: ["NodeJS", "ExpressJS", "MongoDB", "EJS"],
+      tech: ["NodeJS", "ExpressJS", "MongoDB", "EJS"],
+      link: "#",
     },
   ];
 
@@ -44,24 +47,8 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 * index }}
-              className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md"
             >
-              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <ProjectItem data={project} />
             </motion.div>
           ))}
         </div>

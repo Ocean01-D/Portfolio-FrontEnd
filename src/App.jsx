@@ -3,17 +3,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 
-
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <main className="container mx-auto px-4 py-8">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-500">
+      <BrowserRouter>
+        <Header />
+        <main className="flex-1 pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </div>
   );
 }
 
