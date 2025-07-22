@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJsSquare } from "react-icons/fa";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -8,15 +9,20 @@ const Skills = () => {
   const skillGroups = [
     {
       title: "Back-end skills",
-      skills: ["Node.js", "MongoDB", "Express", "NLP"],
+      skills: [
+        { name: "Node.js", level: 70, icon: <FaNodeJs /> },
+        { name: "MongoDB", level: 65, icon: <FaDatabase /> },
+        { name: "Express", level: 60 },
+        { name: "NLP", level: 50 },
+      ],
     },
     {
-      title: "Programming Languages",
-      skills: ["Java", "C++", "Python", "JavaScript"],
-    },
-    {
-      title: "Other",
-      skills: ["Problem-solving", "Teamwork", "Multitasking"],
+      title: "Front-end skills",
+      skills: [
+        { name: "JavaScript", level: 70, icon: <FaJsSquare /> },
+        { name: "HTML", level: 50, icon: <FaHtml5 /> },
+        { name: "CSS", level: 40, icon: <FaCss3Alt /> },
+      ],
     },
   ];
 
@@ -24,34 +30,55 @@ const Skills = () => {
     <section
       ref={ref}
       id="skills"
-      className="bg-gray-100 dark:bg-gray-900 py-16 px-4 transition-colors duration-500"
+      className="bg-gray-100 dark:bg-gray-900 py-20 px-4 transition-colors duration-500 font-sans"
     >
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-10"
+          className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12"
         >
           Skills
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {skillGroups.map((group, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 * index }}
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow dark:shadow-md"
             >
-              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
+              <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-6 border-b border-gray-300 dark:border-gray-700 pb-2">
                 {group.title}
               </h3>
-              <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <div className="space-y-6">
                 {group.skills.map((skill, i) => (
-                  <li key={i}>{skill}</li>
+                  <div key={i}>
+                    <div className="flex items-center justify-between mb-1 text-sm text-gray-800 dark:text-gray-200">
+                      <span className="flex items-center gap-2">
+                        {skill.icon && (
+                          <span className="text-blue-600 dark:text-blue-400 text-lg">
+                            {skill.icon}
+                          </span>
+                        )}
+                        {skill.name}
+                      </span>
+                      <span>{skill.level}%</span>
+                    </div>
+                    <div className="w-full h-3 bg-gray-300 dark:bg-gray-700 rounded-full">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={isInView ? { width: `${skill.level}%` } : {}}
+                        transition={{ duration: 1, delay: 0.1 * i }}
+                        className="h-3 bg-blue-600 dark:bg-blue-400 rounded-full"
+                      ></motion.div>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>
