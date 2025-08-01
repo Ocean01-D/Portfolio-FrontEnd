@@ -4,9 +4,16 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class", // <- thêm dòng này
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: '#121212',
+        foreground: '#ffffff',
+        primary: '#1f1f1f',
+        secondary: '#2a2a2a',
+        accent: '#646cff',
+      },
+    },
   },
   plugins: [],
 };

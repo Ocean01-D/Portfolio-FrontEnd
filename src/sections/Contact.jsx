@@ -12,7 +12,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className="bg-gray-100 dark:bg-gray-900 py-20 px-4"
+      className="bg-gray-900 py-20 px-4 transition-colors duration-500"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* Thông tin liên hệ */}
@@ -22,24 +22,24 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="space-y-5"
         >
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
+          <h2 className="text-3xl font-bold text-white">
             Contact Me
           </h2>
-          <p className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-300">
             Feel free to reach out to me through the form or contact info below.
           </p>
-          <ul className="space-y-4 text-gray-800 dark:text-gray-200">
+          <ul className="space-y-4 text-gray-200">
             <li className="flex items-center gap-3">
-              <FaEnvelope className="text-blue-600" /> 23560085@gm.uit.edu.vn
+              <FaEnvelope className="text-blue-400" /> 23560085@gm.uit.edu.vn
             </li>
             <li className="flex items-center gap-3">
-              <FaPhoneAlt className="text-blue-600" /> 0971000000
+              <FaPhoneAlt className="text-blue-400" /> 0971000000
             </li>
             <li className="flex items-center gap-3">
-              <FaFacebookF className="text-blue-600" /> facebook.com/Ocean
+              <FaFacebookF className="text-blue-400" /> facebook.com/Ocean
             </li>
             <li className="flex items-center gap-3">
-              <SiZalo className="text-blue-600" /> zalo.me/0971000000
+              <SiZalo className="text-blue-400" /> zalo.me/0971000000
             </li>
           </ul>
         </motion.div>
@@ -49,37 +49,37 @@ const Contact = () => {
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow space-y-6"
+          className="bg-gray-800 p-8 rounded-xl shadow space-y-6"
         >
           <div>
-            <label className="block text-gray-700 dark:text-gray-300 mb-1">
+            <label className="block text-gray-300 mb-1">
               Name
             </label>
             <input
               type="text"
-              className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+              className="w-full px-4 py-2 rounded border border-gray-600 bg-gray-700 text-white placeholder-gray-400"
               placeholder="Your name"
             />
           </div>
 
           <div>
-            <label className="block text-gray-700 dark:text-gray-300 mb-1">
+            <label className="block text-gray-300 mb-1">
               Email
             </label>
             <input
               type="email"
-              className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+              className="w-full px-4 py-2 rounded border border-gray-600 bg-gray-700 text-white placeholder-gray-400"
               placeholder="your@email.com"
             />
           </div>
 
           <div>
-            <label className="block text-gray-700 dark:text-gray-300 mb-1">
+            <label className="block text-gray-300 mb-1">
               Message
             </label>
             <textarea
               rows="5"
-              className="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+              className="w-full px-4 py-2 rounded border border-gray-600 bg-gray-700 text-white placeholder-gray-400"
               placeholder="Your message..."
             ></textarea>
           </div>
