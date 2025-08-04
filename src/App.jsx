@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-500">
+    <div className="min-h-screen flex flex-col bg-background text-foreground duration-500">
       <BrowserRouter>
         <Header />
         <main className="flex-1 pt-20">
